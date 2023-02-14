@@ -63,26 +63,17 @@ const danik = new THREE.Mesh(
 
 scene.add(danik);
 
-const dwTexture = new THREE.TextureLoader().load('dw_logo.png');
-const mwTexture = new THREE.TextureLoader().load('mw.jpeg');
-const activisionTexture = new THREE.TextureLoader().load('activision.png');
-const tntTexture = new THREE.TextureLoader().load('tnt.jpg');
+const eaTexture = new THREE.TextureLoader().load('ea_logo.png');
 
-const logoMaterials = [
-  new THREE.MeshBasicMaterial({ map: dwTexture }),  
-  new THREE.MeshBasicMaterial({ map: dwTexture }),
-  new THREE.MeshBasicMaterial({ map: tntTexture }),
-  new THREE.MeshBasicMaterial({ map: mwTexture }),
-  new THREE.MeshBasicMaterial({ map: activisionTexture }),
-  new THREE.MeshBasicMaterial({ map: activisionTexture }),
-]
+const logoMaterials = new THREE.MeshBasicMaterial({ map: eaTexture })
 
-const dw = new THREE.Mesh(
+
+const ea = new THREE.Mesh(
   new THREE.BoxGeometry(2,2,2),
   logoMaterials
 );
 
-scene.add(dw);
+scene.add(ea);
 
 const marsTexture = new THREE.TextureLoader().load('2k_mars.jpg');
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
@@ -119,8 +110,8 @@ danik.position.z = -5;
 danik.position.x = 2;
 danik.position.y = 0.5;
 
-dw.position.z = 5;
-dw.position.x = 4;
+ea.position.z = 5;
+ea.position.x = 4;
 
 function moveCamera() {
 
@@ -136,8 +127,8 @@ function moveCamera() {
   danik.rotation.y += 0.01;
   danik.rotation.z += 0.01;
 
-  dw.rotation.y += 0.01;
-  dw.rotation.z += 0.01;
+  ea.rotation.y += 0.01;
+  ea.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
@@ -158,8 +149,8 @@ function animate() {
   jupiter.rotation.y += -0.002;
   mars.rotation.y += 0.005;
 
-  dw.rotation.x += 0.01;
-  dw.rotation.y += 0.02;
+  ea.rotation.x += 0.01;
+  ea.rotation.y += 0.02;
 
   //controls.update();
 
